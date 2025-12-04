@@ -1,0 +1,65 @@
+.page-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;       
+    gap: 20px;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: 300px;
+    margin-top: 20px;
+}
+
+.form-container label {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.form-container input,
+.form-container textarea {
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #bbb;
+    font-size: 14px;
+}
+
+.content-box {
+    width: 100%;
+    height: 120px;
+}
+
+.form-container button {
+    padding: 10px;
+    border: none;
+    background: #007bff;
+    color: white;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.result-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.blogs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 20px;
+    width: 70%; 
+}
+
+.blog-card {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background: #fafafa;
+    height: auto; 
+}

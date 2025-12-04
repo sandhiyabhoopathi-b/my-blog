@@ -1,0 +1,39 @@
+{% extends 'index.html' %}
+
+{% load static %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
+
+
+{% block content %}
+
+<div class="page-center">
+    <h1>Welcome to MY Blog</h1>
+    <form method="POST" action="{% url 'result' %}" class="form-container">
+        {% csrf_token %} 
+        <label>Title : </label>
+        <input type="text" name="title"/>
+        <label>Content : </label>
+        <textarea class="content-box" name="content"></textarea>
+        <button>Post</button>
+    </form>
+</div>
+
+<div id="blog-result" class="result-container">
+    <div class="blogs">
+        {% for p in posts %}
+            <div class="blog-card">
+                <h3>{{ p.title }}</h3>
+                <p>{{ p.content }}</p>
+                <small>{{ p.created_at|timesince }} ago</small>
+                <a href="{% url 'update' p.id %}"><button>Update</button></a>
+                <a href="{% url 'delete' p.id %}"><button>Delete</button></a>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+{% endblock %}
